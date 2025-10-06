@@ -133,11 +133,11 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
       </div>
 
       {/* Notifications List */}
-      <div className="max-h-96 overflow-y-auto">
+      <div className="max-h-96 overflow-y-auto bg-white">
         {notifications.length === 0 ? (
           <div className="p-8 text-center">
             <Bell className="h-12 w-12 text-gray-400 mx-auto mb-3" />
-            <p className="text-gray-600 text-sm">No notifications yet</p>
+            <p className="text-gray-700 text-sm font-medium">No notifications yet</p>
             <p className="text-gray-500 text-xs mt-1">
               We'll notify you when something important happens
             </p>
@@ -147,10 +147,10 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
             {notifications.map((notification) => (
               <div
                 key={notification.id}
-                className={`p-3 rounded-lg mb-2 transition-all duration-200 hover:bg-white/20 ${
+                className={`p-3 rounded-lg mb-2 transition-all duration-200 hover:bg-gray-50 ${
                   !notification.read 
-                    ? `${getNotificationBg(notification.type)} border` 
-                    : 'bg-white/5'
+                    ? `${getNotificationBg(notification.type)} border shadow-sm` 
+                    : 'bg-gray-50/50 border border-gray-100'
                 }`}
               >
                 <div className="flex items-start space-x-3">
