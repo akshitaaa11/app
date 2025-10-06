@@ -210,10 +210,10 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
 
       {/* Footer */}
       {notifications.length > 0 && (
-        <div className="p-3 border-t border-white/20">
+        <div className="p-3 border-t border-gray-200 bg-gray-50 rounded-b-xl">
           <button
             onClick={clearAll}
-            className="w-full text-xs text-gray-600 hover:text-red-600 transition-colors"
+            className="w-full text-xs text-gray-600 hover:text-red-600 font-medium transition-colors py-2"
           >
             Clear all notifications
           </button>
