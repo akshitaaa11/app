@@ -160,8 +160,8 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
                   
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between">
-                      <h4 className={`text-sm font-medium ${
-                        !notification.read ? 'text-gray-800' : 'text-gray-600'
+                      <h4 className={`text-sm font-semibold ${
+                        !notification.read ? 'text-gray-900' : 'text-gray-700'
                       }`}>
                         {notification.title}
                       </h4>
@@ -170,7 +170,7 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
                         {!notification.read && (
                           <button
                             onClick={() => markAsRead(notification.id)}
-                            className="p-1 rounded text-gray-500 hover:text-green-600 hover:bg-green-100/20 transition-all duration-200"
+                            className="p-1 rounded-md text-gray-400 hover:text-green-600 hover:bg-green-100 transition-all duration-200"
                             title="Mark as read"
                           >
                             <Check className="h-3 w-3" />
@@ -179,7 +179,7 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
                         
                         <button
                           onClick={() => deleteNotification(notification.id)}
-                          className="p-1 rounded text-gray-500 hover:text-red-600 hover:bg-red-100/20 transition-all duration-200"
+                          className="p-1 rounded-md text-gray-400 hover:text-red-600 hover:bg-red-100 transition-all duration-200"
                           title="Delete notification"
                         >
                           <Trash2 className="h-3 w-3" />
@@ -188,12 +188,12 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
                     </div>
                     
                     <p className={`text-xs mt-1 leading-relaxed ${
-                      !notification.read ? 'text-gray-700' : 'text-gray-500'
+                      !notification.read ? 'text-gray-800' : 'text-gray-600'
                     }`}>
                       {notification.message}
                     </p>
                     
-                    <p className="text-xs text-gray-500 mt-2">
+                    <p className="text-xs text-gray-500 mt-2 font-medium">
                       {formatTimeAgo(notification.timestamp)}
                     </p>
                   </div>
