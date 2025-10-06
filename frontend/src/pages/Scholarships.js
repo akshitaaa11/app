@@ -80,12 +80,12 @@ const Scholarships = () => {
         <div className="glass rounded-2xl p-8 mb-8 animate-slide-up">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-white mb-2">Discover Scholarships</h1>
-              <p className="text-gray-300">
+              <h1 className="text-3xl font-bold text-gray-800 mb-2">Discover Scholarships</h1>
+              <p className="text-gray-600">
                 Find the perfect scholarship opportunities tailored to your profile
               </p>
             </div>
-            <div className="mt-4 md:mt-0 flex items-center space-x-2 text-sm text-gray-300">
+            <div className="mt-4 md:mt-0 flex items-center space-x-2 text-sm text-gray-600">
               <span>{filteredScholarships.length} scholarships found</span>
             </div>
           </div>
@@ -96,11 +96,11 @@ const Scholarships = () => {
           <div className="lg:col-span-1">
             <div className="glass rounded-2xl p-6 sticky top-24">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-semibold text-white">Filters</h2>
+                <h2 className="text-lg font-semibold text-gray-800">Filters</h2>
                 {(searchTerm || selectedCategory !== 'all' || selectedType !== 'all') && (
                   <button
                     onClick={clearFilters}
-                    className="text-blue-400 hover:text-blue-300 text-sm transition-colors"
+                    className="text-amber-700 hover:text-amber-600 text-sm transition-colors"
                   >
                     Clear all
                   </button>
@@ -109,9 +109,9 @@ const Scholarships = () => {
 
               {/* Search */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-300 mb-2">Search</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
                   <input
                     type="text"
                     value={searchTerm}
@@ -124,7 +124,7 @@ const Scholarships = () => {
 
               {/* Category Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
                 <div className="space-y-2">
                   {categories.map((category) => (
                     <label key={category} className="flex items-center space-x-2 cursor-pointer">
@@ -134,9 +134,9 @@ const Scholarships = () => {
                         value={category}
                         checked={selectedCategory === category}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="text-blue-500 focus:ring-blue-500 bg-transparent border-gray-500"
+                        className="text-amber-600 focus:ring-amber-500 bg-transparent border-gray-400"
                       />
-                      <span className="text-gray-300 text-sm capitalize">
+                      <span className="text-gray-700 text-sm capitalize">
                         {category === 'all' ? 'All Categories' : category}
                       </span>
                     </label>
@@ -146,7 +146,7 @@ const Scholarships = () => {
 
               {/* Type Filter */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-300 mb-2">Type</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Type</label>
                 <div className="space-y-2">
                   {types.map((type) => (
                     <label key={type} className="flex items-center space-x-2 cursor-pointer">
@@ -156,9 +156,9 @@ const Scholarships = () => {
                         value={type}
                         checked={selectedType === type}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="text-blue-500 focus:ring-blue-500 bg-transparent border-gray-500"
+                        className="text-amber-600 focus:ring-amber-500 bg-transparent border-gray-400"
                       />
-                      <span className="text-gray-300 text-sm capitalize">
+                      <span className="text-gray-700 text-sm capitalize">
                         {type === 'all' ? 'All Types' : type}
                       </span>
                     </label>
@@ -173,8 +173,8 @@ const Scholarships = () => {
             {filteredScholarships.length === 0 ? (
               <div className="glass rounded-2xl p-12 text-center">
                 <Search className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">No scholarships found</h3>
-                <p className="text-gray-400 mb-4">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">No scholarships found</h3>
+                <p className="text-gray-600 mb-4">
                   Try adjusting your search criteria or filters to find more results.
                 </p>
                 <button
@@ -194,9 +194,9 @@ const Scholarships = () => {
                     {/* Featured Badge */}
                     {scholarship.featured && (
                       <div className="absolute top-4 right-4">
-                        <div className="glass-blue px-3 py-1 rounded-full flex items-center space-x-1">
-                          <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                          <span className="text-xs font-medium text-yellow-400">Featured</span>
+                        <div className="glass-purple px-3 py-1 rounded-full flex items-center space-x-1">
+                          <Star className="h-3 w-3 text-yellow-600 fill-current" />
+                          <span className="text-xs font-medium text-yellow-700">Featured</span>
                         </div>
                       </div>
                     )}
@@ -206,8 +206,8 @@ const Scholarships = () => {
                       onClick={() => handleBookmark(scholarship.id)}
                       className={`absolute top-4 left-4 p-2 rounded-lg transition-all duration-200 ${
                         bookmarkedScholarships.has(scholarship.id)
-                          ? 'text-blue-400 bg-blue-500/20'
-                          : 'text-gray-400 hover:text-blue-400 hover:bg-blue-500/10'
+                          ? 'text-amber-700 bg-amber-100/50'
+                          : 'text-gray-600 hover:text-amber-700 hover:bg-amber-100/30'
                       }`}
                     >
                       <Bookmark 
@@ -218,11 +218,11 @@ const Scholarships = () => {
                     </button>
 
                     <div className="mt-8 mb-4">
-                      <h3 className="text-lg font-bold text-white mb-2 pr-16">
+                      <h3 className="text-lg font-bold text-gray-800 mb-2 pr-16">
                         {scholarship.title}
                       </h3>
-                      <p className="text-gray-400 text-sm mb-4">{scholarship.provider}</p>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                      <p className="text-gray-600 text-sm mb-4">{scholarship.provider}</p>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4">
                         {scholarship.description}
                       </p>
                     </div>
@@ -230,36 +230,36 @@ const Scholarships = () => {
                     {/* Scholarship Details */}
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center space-x-2">
-                        <DollarSign className="h-4 w-4 text-green-400" />
-                        <span className="text-green-400 font-semibold">{scholarship.amount}</span>
+                        <DollarSign className="h-4 w-4 text-green-600" />
+                        <span className="text-green-600 font-semibold">{scholarship.amount}</span>
                       </div>
                       
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-yellow-400" />
-                        <span className="text-gray-300 text-sm">
+                        <Calendar className="h-4 w-4 text-yellow-600" />
+                        <span className="text-gray-700 text-sm">
                           Due: {new Date(scholarship.deadline).toLocaleDateString()}
                         </span>
                       </div>
                       
                       <div className="flex items-center space-x-2">
-                        <MapPin className="h-4 w-4 text-blue-400" />
-                        <span className="text-gray-300 text-sm">{scholarship.location}</span>
+                        <MapPin className="h-4 w-4 text-blue-600" />
+                        <span className="text-gray-700 text-sm">{scholarship.location}</span>
                       </div>
                       
                       <div className="flex items-center space-x-2">
-                        <BookOpen className="h-4 w-4 text-purple-400" />
-                        <span className="text-gray-300 text-sm">{scholarship.type}</span>
+                        <BookOpen className="h-4 w-4 text-purple-600" />
+                        <span className="text-gray-700 text-sm">{scholarship.type}</span>
                       </div>
                     </div>
 
                     {/* Requirements */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-medium text-white mb-2">Requirements:</h4>
+                      <h4 className="text-sm font-medium text-gray-800 mb-2">Requirements:</h4>
                       <div className="flex flex-wrap gap-2">
                         {scholarship.requirements.map((req, index) => (
                           <span
                             key={index}
-                            className="glass-dark px-3 py-1 rounded-full text-xs text-gray-300"
+                            className="glass-dark px-3 py-1 rounded-full text-xs text-gray-700"
                           >
                             {req}
                           </span>
