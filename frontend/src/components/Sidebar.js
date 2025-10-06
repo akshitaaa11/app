@@ -32,6 +32,8 @@ const Sidebar = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  const unreadNotifications = mockNotifications.filter(n => !n.read).length;
+
   return (
     <div className={`fixed left-0 top-0 h-full sidebar-glass transition-all duration-300 z-40 ${
       isCollapsed ? 'w-16' : 'w-64'
