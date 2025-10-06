@@ -104,7 +104,7 @@ export const mockChatMessages = [
   {
     id: '1',
     type: 'bot',
-    content: 'Hello! I\'m your scholarship assistant. How can I help you find the perfect scholarship today?',
+    content: 'Hello! I\'m your VidyaVikas scholarship assistant. How can I help you find the perfect scholarship today?',
     timestamp: '2024-09-15T10:00:00Z',
     avatar: '🤖'
   },
