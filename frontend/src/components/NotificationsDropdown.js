@@ -199,7 +199,7 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
                   </div>
                   
                   {!notification.read && (
-                    <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0 mt-2 shadow-sm"></div>
                   )}
                 </div>
               </div>
