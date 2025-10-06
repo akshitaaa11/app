@@ -20,6 +20,7 @@ const Sidebar = () => {
   const { user, logout } = useAuth();
   const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const navItems = [
     { path: '/dashboard', label: 'Dashboard', icon: BarChart3 },
