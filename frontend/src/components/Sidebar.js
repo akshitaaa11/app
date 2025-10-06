@@ -13,6 +13,8 @@ import {
   ChevronRight,
   GraduationCap
 } from 'lucide-react';
+import NotificationsDropdown from './NotificationsDropdown';
+import { mockNotifications } from '../data/mockData';
 
 const Sidebar = () => {
   const { user, logout } = useAuth();
