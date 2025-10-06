@@ -101,7 +101,7 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
   return (
     <div 
       ref={dropdownRef}
-      className="absolute top-full left-0 mt-2 w-80 glass rounded-xl shadow-lg z-50 animate-slide-up"
+      className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-2xl z-50 animate-slide-up"
     >
       {/* Header */}
       <div className="p-4 border-b border-white/20">
