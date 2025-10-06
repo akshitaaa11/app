@@ -91,13 +91,31 @@ const Sidebar = () => {
         {/* User Section */}
         <div className="p-4 border-t border-white/20">
           {/* Notifications */}
-          <button className="flex items-center justify-center w-full p-3 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-white/10 transition-all duration-200 mb-3">
-            <div className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 bg-amber-500 rounded-full text-xs"></span>
-            </div>
-            {!isCollapsed && <span className="ml-3 font-medium text-sm">Notifications</span>}
-          </button>
+          <div className="relative mb-3">
+            <button 
+              onClick={() => setShowNotifications(!showNotifications)}
+              className={`flex items-center justify-center w-full p-3 rounded-lg transition-all duration-200 ${
+                showNotifications 
+                  ? 'glass-purple text-amber-800' 
+                  : 'text-gray-700 hover:text-gray-900 hover:bg-white/10'
+              }`}
+            >
+              <div className="relative">
+                <Bell className="h-5 w-5" />
+                {unreadNotifications > 0 && (
+                  <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs flex items-center justify-center text-white font-bold min-w-[12px]">
+                    {unreadNotifications > 9 ? '9+' : unreadNotifications}
+                  </span>
+                )}
+              </div>
+              {!isCollapsed && <span className="ml-3 font-medium text-sm">Notifications</span>}
+            </button>
+            
+            <NotificationsDropdown 
+              isOpen={showNotifications} 
+              onClose={() => setShowNotifications(false)} 
+            />
+          </div>
 
           {/* Profile */}
           <Link
