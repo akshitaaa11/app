@@ -122,7 +122,7 @@ const Profile = () => {
         {/* Header */}
         <div className="glass rounded-2xl p-8 mb-8 animate-slide-up">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Profile Settings</h1>
+            <h1 className="text-3xl font-bold text-gray-800">Profile Settings</h1>
             {!isEditing ? (
               <button
                 onClick={() => setIsEditing(true)}
@@ -135,14 +135,14 @@ const Profile = () => {
               <div className="flex items-center space-x-3">
                 <button
                   onClick={handleSave}
-                  className="glass-button px-6 py-3 rounded-xl flex items-center space-x-2 bg-green-500/20 border-green-500/30 text-green-400"
+                  className="glass-button px-6 py-3 rounded-xl flex items-center space-x-2 bg-green-100/50 border-green-300/50 text-green-700"
                 >
                   <Save className="h-4 w-4" />
                   <span>Save</span>
                 </button>
                 <button
                   onClick={handleCancel}
-                  className="glass-button px-6 py-3 rounded-xl flex items-center space-x-2 bg-red-500/20 border-red-500/30 text-red-400"
+                  className="glass-button px-6 py-3 rounded-xl flex items-center space-x-2 bg-red-100/50 border-red-300/50 text-red-700"
                 >
                   <X className="h-4 w-4" />
                   <span>Cancel</span>
@@ -161,10 +161,10 @@ const Profile = () => {
                   <img
                     src={user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face'}
                     alt={user?.name}
-                    className="w-24 h-24 rounded-full border-4 border-white/20 mx-auto"
+                    className="w-24 h-24 rounded-full border-4 border-white/30 mx-auto"
                   />
                   {isEditing && (
-                    <button className="absolute bottom-0 right-0 glass-blue p-2 rounded-full text-blue-300 hover:text-blue-200 transition-colors">
+                    <button className="absolute bottom-0 right-0 glass-purple p-2 rounded-full text-amber-700 hover:text-amber-600 transition-colors">
                       <Camera className="h-4 w-4" />
                     </button>
                   )}
@@ -180,25 +180,25 @@ const Profile = () => {
                     placeholder="Full Name"
                   />
                 ) : (
-                  <h2 className="text-xl font-bold text-white mb-2">{displayData.name}</h2>
+                  <h2 className="text-xl font-bold text-gray-800 mb-2">{displayData.name}</h2>
                 )}
                 
-                <p className="text-gray-400 mb-4">{displayData.major} Student</p>
+                <p className="text-gray-600 mb-4">{displayData.major} Student</p>
                 
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center justify-center space-x-2">
-                    <GraduationCap className="h-4 w-4 text-blue-400" />
-                    <span className="text-gray-300">{displayData.university}</span>
+                    <GraduationCap className="h-4 w-4 text-amber-600" />
+                    <span className="text-gray-700">{displayData.university}</span>
                   </div>
                   
                   <div className="flex items-center justify-center space-x-2">
-                    <Calendar className="h-4 w-4 text-green-400" />
-                    <span className="text-gray-300">Class of {displayData.graduationYear}</span>
+                    <Calendar className="h-4 w-4 text-green-600" />
+                    <span className="text-gray-700">Class of {displayData.graduationYear}</span>
                   </div>
                   
                   <div className="flex items-center justify-center space-x-2">
-                    <MapPin className="h-4 w-4 text-purple-400" />
-                    <span className="text-gray-300">{displayData.location}</span>
+                    <MapPin className="h-4 w-4 text-purple-600" />
+                    <span className="text-gray-700">{displayData.location}</span>
                   </div>
                 </div>
               </div>
@@ -209,11 +209,11 @@ const Profile = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Personal Information */}
             <div className="glass rounded-2xl p-6 animate-slide-up">
-              <h3 className="text-lg font-semibold text-white mb-6">Personal Information</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">Personal Information</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   {isEditing ? (
                     <input
                       type="email"
@@ -225,14 +225,14 @@ const Profile = () => {
                     />
                   ) : (
                     <div className="glass-dark p-3 rounded-lg flex items-center space-x-2">
-                      <Mail className="h-4 w-4 text-gray-400" />
-                      <span className="text-gray-300">{displayData.email}</span>
+                      <Mail className="h-4 w-4 text-gray-600" />
+                      <span className="text-gray-700">{displayData.email}</span>
                     </div>
                   )}
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">University</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">University</label>
                   {isEditing ? (
                     <input
                       type="text"
@@ -244,14 +244,14 @@ const Profile = () => {
                     />
                   ) : (
                     <div className="glass-dark p-3 rounded-lg flex items-center space-x-2">
-                      <GraduationCap className="h-4 w-4 text-gray-400" />
-                      <span className="text-gray-300">{displayData.university}</span>
+                      <GraduationCap className="h-4 w-4 text-gray-600" />
+                      <span className="text-gray-700">{displayData.university}</span>
                     </div>
                   )}
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Major</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Major</label>
                   {isEditing ? (
                     <input
                       type="text"
@@ -263,14 +263,14 @@ const Profile = () => {
                     />
                   ) : (
                     <div className="glass-dark p-3 rounded-lg flex items-center space-x-2">
-                      <Book className="h-4 w-4 text-gray-400" />
-                      <span className="text-gray-300">{displayData.major}</span>
+                      <Book className="h-4 w-4 text-gray-600" />
+                      <span className="text-gray-700">{displayData.major}</span>
                     </div>
                   )}
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">GPA</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">GPA</label>
                   {isEditing ? (
                     <input
                       type="text"
@@ -282,14 +282,14 @@ const Profile = () => {
                     />
                   ) : (
                     <div className="glass-dark p-3 rounded-lg">
-                      <span className="text-gray-300">{displayData.gpa}/4.0</span>
+                      <span className="text-gray-700">{displayData.gpa}/4.0</span>
                     </div>
                   )}
                 </div>
               </div>
 
               <div className="mt-6">
-                <label className="block text-sm font-medium text-gray-300 mb-2">Bio</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Bio</label>
                 {isEditing ? (
                   <textarea
                     name="bio"
@@ -301,7 +301,7 @@ const Profile = () => {
                   />
                 ) : (
                   <div className="glass-dark p-3 rounded-lg">
-                    <p className="text-gray-300 leading-relaxed">{displayData.bio}</p>
+                    <p className="text-gray-700 leading-relaxed">{displayData.bio}</p>
                   </div>
                 )}
               </div>
@@ -309,19 +309,19 @@ const Profile = () => {
 
             {/* Interests */}
             <div className="glass rounded-2xl p-6 animate-slide-up">
-              <h3 className="text-lg font-semibold text-white mb-6">Interests</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">Interests</h3>
               
               <div className="flex flex-wrap gap-2 mb-4">
                 {displayData.interests.map((interest, index) => (
                   <span
                     key={index}
-                    className="glass-blue px-3 py-2 rounded-full text-sm text-blue-300 flex items-center space-x-2"
+                    className="glass-purple px-3 py-2 rounded-full text-sm text-amber-800 flex items-center space-x-2"
                   >
                     <span>{interest}</span>
                     {isEditing && (
                       <button
                         onClick={() => removeInterest(interest)}
-                        className="text-blue-300 hover:text-red-400 transition-colors"
+                        className="text-amber-800 hover:text-red-600 transition-colors"
                       >
                         <X className="h-3 w-3" />
                       </button>
@@ -351,7 +351,7 @@ const Profile = () => {
 
             {/* Achievements */}
             <div className="glass rounded-2xl p-6 animate-slide-up">
-              <h3 className="text-lg font-semibold text-white mb-6">Achievements</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-6">Achievements</h3>
               
               <div className="space-y-3 mb-4">
                 {displayData.achievements.map((achievement, index) => (
@@ -359,11 +359,11 @@ const Profile = () => {
                     key={index}
                     className="glass-dark p-3 rounded-lg flex items-center justify-between"
                   >
-                    <span className="text-gray-300">{achievement}</span>
+                    <span className="text-gray-700">{achievement}</span>
                     {isEditing && (
                       <button
                         onClick={() => removeAchievement(achievement)}
-                        className="text-gray-400 hover:text-red-400 transition-colors"
+                        className="text-gray-600 hover:text-red-600 transition-colors"
                       >
                         <X className="h-4 w-4" />
                       </button>
