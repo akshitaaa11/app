@@ -186,5 +186,29 @@ export const mockNotifications = [
     message: 'MIT Innovation Scholarship deadline is in 5 days.',
     timestamp: '2024-09-13T11:15:00Z',
     read: true
+  },
+  {
+    id: '4',
+    type: 'info',
+    title: 'Profile Updated',
+    message: 'Your profile information has been successfully updated.',
+    timestamp: '2024-09-12T16:45:00Z',
+    read: true
+  },
+  {
+    id: '5',
+    type: 'success',
+    title: 'Application Submitted',
+    message: 'Your Women in Tech Leadership Grant application has been submitted successfully.',
+    timestamp: '2024-09-11T10:20:00Z',
+    read: false
+  },
+  {
+    id: '6',
+    type: 'warning',
+    title: 'Document Required',
+    message: 'Please upload your transcript for the Environmental Sciences Excellence Award application.',
+    timestamp: '2024-09-10T13:30:00Z',
+    read: true
   }
 ];
