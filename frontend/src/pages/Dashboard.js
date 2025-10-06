@@ -23,42 +23,42 @@ const Dashboard = () => {
       title: 'Total Scholarships',
       value: mockAnalyticsData.totalScholarships.toLocaleString(),
       icon: Search,
-      color: 'text-blue-400',
-      bgColor: 'bg-blue-500/10'
+      color: 'text-amber-700',
+      bgColor: 'bg-amber-100/50'
     },
     {
       title: 'Applications Submitted',
       value: mockAnalyticsData.applicationsSubmitted,
       icon: BookOpen,
-      color: 'text-green-400',
-      bgColor: 'bg-green-500/10'
+      color: 'text-green-700',
+      bgColor: 'bg-green-100/50'
     },
     {
       title: 'Success Rate',
       value: mockAnalyticsData.successRate,
       icon: TrendingUp,
-      color: 'text-purple-400',
-      bgColor: 'bg-purple-500/10'
+      color: 'text-purple-700',
+      bgColor: 'bg-purple-100/50'
     },
     {
       title: 'Total Awarded',
       value: mockAnalyticsData.totalAwarded,
       icon: Award,
-      color: 'text-yellow-400',
-      bgColor: 'bg-yellow-500/10'
+      color: 'text-yellow-700',
+      bgColor: 'bg-yellow-100/50'
     }
   ];
 
   const getStatusIcon = (status) => {
     switch (status) {
       case 'approved':
-        return <CheckCircle className="h-5 w-5 text-green-400" />;
+        return <CheckCircle className="h-5 w-5 text-green-600" />;
       case 'pending':
-        return <Clock className="h-5 w-5 text-yellow-400" />;
+        return <Clock className="h-5 w-5 text-yellow-600" />;
       case 'rejected':
-        return <XCircle className="h-5 w-5 text-red-400" />;
+        return <XCircle className="h-5 w-5 text-red-600" />;
       default:
-        return <Clock className="h-5 w-5 text-gray-400" />;
+        return <Clock className="h-5 w-5 text-gray-600" />;
     }
   };
 
@@ -82,10 +82,10 @@ const Dashboard = () => {
         <div className="glass rounded-2xl p-8 animate-slide-up">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-white mb-2">
+              <h1 className="text-3xl font-bold text-gray-800 mb-2">
                 Welcome back, {user?.name}! 👋
               </h1>
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-600 text-lg">
                 Ready to discover new scholarship opportunities?
               </p>
             </div>
@@ -113,8 +113,8 @@ const Dashboard = () => {
                     <IconComponent className={`h-6 w-6 ${stat.color}`} />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">{stat.value}</h3>
-                <p className="text-gray-400 text-sm">{stat.title}</p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-1">{stat.value}</h3>
+                <p className="text-gray-600 text-sm">{stat.title}</p>
               </div>
             );
           })}
@@ -124,33 +124,33 @@ const Dashboard = () => {
           {/* Featured Scholarships */}
           <div className="glass rounded-2xl p-6 animate-slide-up">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-white">Featured Scholarships</h2>
+              <h2 className="text-xl font-bold text-gray-800">Featured Scholarships</h2>
               <Link
                 to="/scholarships"
-                className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                className="text-amber-700 hover:text-amber-600 transition-colors text-sm font-medium"
               >
                 View All
               </Link>
             </div>
             <div className="space-y-4">
               {mockScholarships.filter(s => s.featured).slice(0, 3).map((scholarship) => (
-                <div key={scholarship.id} className="glass-dark rounded-xl p-4 hover:bg-white/5 transition-all duration-300 group">
+                <div key={scholarship.id} className="glass-dark rounded-xl p-4 hover:bg-white/20 transition-all duration-300 group">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                      <h3 className="font-semibold text-gray-800 mb-1 group-hover:text-amber-700 transition-colors">
                         {scholarship.title}
                       </h3>
-                      <p className="text-gray-400 text-sm mb-2">{scholarship.provider}</p>
+                      <p className="text-gray-600 text-sm mb-2">{scholarship.provider}</p>
                       <div className="flex items-center space-x-4 text-sm">
-                        <span className="text-green-400 font-medium">{scholarship.amount}</span>
-                        <span className="text-gray-400 flex items-center space-x-1">
+                        <span className="text-green-600 font-medium">{scholarship.amount}</span>
+                        <span className="text-gray-600 flex items-center space-x-1">
                           <Calendar className="h-4 w-4" />
                           <span>Due {new Date(scholarship.deadline).toLocaleDateString()}</span>
                         </span>
                       </div>
                     </div>
-                    <div className="glass-blue px-3 py-1 rounded-full">
-                      <span className="text-blue-300 text-xs font-medium">{scholarship.category}</span>
+                    <div className="glass-purple px-3 py-1 rounded-full">
+                      <span className="text-amber-800 text-xs font-medium">{scholarship.category}</span>
                     </div>
                   </div>
                 </div>
@@ -161,10 +161,10 @@ const Dashboard = () => {
           {/* Recent Applications */}
           <div className="glass rounded-2xl p-6 animate-slide-up">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-white">Recent Applications</h2>
+              <h2 className="text-xl font-bold text-gray-800">Recent Applications</h2>
               <Link
                 to="/my-scholarships"
-                className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                className="text-amber-700 hover:text-amber-600 transition-colors text-sm font-medium"
               >
                 View All
               </Link>
@@ -173,16 +173,16 @@ const Dashboard = () => {
               {mockMyScholarships.slice(0, 3).map((application) => (
                 <div key={application.id} className="glass-dark rounded-xl p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-white text-sm">
+                    <h3 className="font-semibold text-gray-800 text-sm">
                       {application.scholarship.title}
                     </h3>
                     <div className="flex items-center space-x-2">
                       {getStatusIcon(application.status)}
                     </div>
                   </div>
-                  <p className="text-gray-400 text-xs mb-3">{application.scholarship.provider}</p>
+                  <p className="text-gray-600 text-xs mb-3">{application.scholarship.provider}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-green-400 font-medium text-sm">
+                    <span className="text-green-600 font-medium text-sm">
                       {application.scholarship.amount}
                     </span>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getStatusClass(application.status)}`}>
@@ -197,33 +197,33 @@ const Dashboard = () => {
 
         {/* Quick Actions */}
         <div className="glass rounded-2xl p-6 animate-slide-up">
-          <h2 className="text-xl font-bold text-white mb-6">Quick Actions</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               to="/chat"
               className="glass-button p-6 rounded-xl text-center group hover:scale-105 transition-all duration-300"
             >
-              <MessageSquare className="h-8 w-8 text-blue-400 mx-auto mb-3 group-hover:text-blue-300" />
-              <h3 className="font-semibold text-white mb-1">Chat with Assistant</h3>
-              <p className="text-gray-400 text-sm">Get personalized scholarship recommendations</p>
+              <MessageSquare className="h-8 w-8 text-amber-700 mx-auto mb-3 group-hover:text-amber-600" />
+              <h3 className="font-semibold text-gray-800 mb-1">Chat with Assistant</h3>
+              <p className="text-gray-600 text-sm">Get personalized scholarship recommendations</p>
             </Link>
             
             <Link
               to="/scholarships"
               className="glass-button p-6 rounded-xl text-center group hover:scale-105 transition-all duration-300"
             >
-              <Search className="h-8 w-8 text-green-400 mx-auto mb-3 group-hover:text-green-300" />
-              <h3 className="font-semibold text-white mb-1">Browse Scholarships</h3>
-              <p className="text-gray-400 text-sm">Explore thousands of opportunities</p>
+              <Search className="h-8 w-8 text-green-600 mx-auto mb-3 group-hover:text-green-500" />
+              <h3 className="font-semibold text-gray-800 mb-1">Browse Scholarships</h3>
+              <p className="text-gray-600 text-sm">Explore thousands of opportunities</p>
             </Link>
             
             <Link
               to="/analytics"
               className="glass-button p-6 rounded-xl text-center group hover:scale-105 transition-all duration-300"
             >
-              <TrendingUp className="h-8 w-8 text-purple-400 mx-auto mb-3 group-hover:text-purple-300" />
-              <h3 className="font-semibold text-white mb-1">View Analytics</h3>
-              <p className="text-gray-400 text-sm">Track your application progress</p>
+              <TrendingUp className="h-8 w-8 text-purple-600 mx-auto mb-3 group-hover:text-purple-500" />
+              <h3 className="font-semibold text-gray-800 mb-1">View Analytics</h3>
+              <p className="text-gray-600 text-sm">Track your application progress</p>
             </Link>
           </div>
         </div>
