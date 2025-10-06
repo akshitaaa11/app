@@ -45,12 +45,12 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
   const getNotificationBg = (type) => {
     switch (type) {
       case 'success':
-        return 'bg-green-100/50 border-green-200/50';
+        return 'bg-green-50 border-green-200';
       case 'warning':
-        return 'bg-yellow-100/50 border-yellow-200/50';
+        return 'bg-yellow-50 border-yellow-200';
       case 'info':
       default:
-        return 'bg-blue-100/50 border-blue-200/50';
+        return 'bg-blue-50 border-blue-200';
     }
   };
 
