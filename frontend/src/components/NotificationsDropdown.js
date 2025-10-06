@@ -104,21 +104,21 @@ const NotificationsDropdown = ({ isOpen, onClose }) => {
       className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-2xl z-50 animate-slide-up"
     >
       {/* Header */}
-      <div className="p-4 border-b border-white/20">
+      <div className="p-4 border-b border-gray-200 bg-gray-50 rounded-t-xl">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-gray-800">Notifications</h3>
+          <h3 className="font-semibold text-gray-900">Notifications</h3>
           <div className="flex items-center space-x-2">
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="text-xs text-amber-700 hover:text-amber-600 transition-colors"
+                className="text-xs text-amber-700 hover:text-amber-800 font-medium transition-colors"
               >
                 Mark all read
               </button>
             )}
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-gray-600 hover:text-gray-800 hover:bg-white/20 transition-all duration-200"
+              className="p-1 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-all duration-200"
             >
               <X className="h-4 w-4" />
             </button>
